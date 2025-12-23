@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Instagram, Facebook, Youtube, Linkedin } from 'lucide-react';
+import { Mail, Instagram, Linkedin, Twitter } from 'lucide-react';
 
 export const Contact = () => {
     const [formData, setFormData] = useState({
@@ -80,33 +80,60 @@ export const Contact = () => {
                                 <span className="text-xl">👍</span>
                                 <div className="flex items-center gap-3">
                                     {[
-                                        { Icon: Instagram, href: "#" },
-                                        { Icon: Facebook, href: "#" },
-                                        { Icon: Youtube, href: "#" },
-                                        { Icon: Linkedin, href: "#" },
+                                        { Icon: Instagram, href: "https://www.instagram.com/_thedigitaldose_/" },
+                                        { Icon: Linkedin, href: "https://www.linkedin.com/company/109764857/" },
+                                        { Icon: Twitter, href: "https://x.com/_thedigitaldose" },
+                                        {
+                                            // Custom SVG for Medium since Lucide might not have it, or use a specific one
+                                            Icon: ({ size, ...props }: { size?: number | string } & React.SVGProps<SVGSVGElement>) => (
+                                                <svg
+                                                    width={size}
+                                                    height={size}
+                                                    viewBox="0 0 24 24"
+                                                    fill="none"
+                                                    stroke="currentColor"
+                                                    strokeWidth="2"
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                    {...props}
+                                                >
+                                                    <path d="M8 16a3 3 0 1 1-6 0v-1a10 10 0 1 0 10 10" />
+                                                    <circle cx="12" cy="12" r="10" />
+                                                    {/* Actually let's use a proper Medium icon path approximation or just a generic one if simplified */}
+                                                    {/* Medium logo is basically three ellipsis-like shapes or a serif M. 
+                                                        Let's use a standard "M" or "Book" if we want to be safe, BUT the user wants the LOGO.
+                                                        Let's use a path that looks like the Medium 'M' or the 3-dot logo? 
+                                                        Actually current Medium logo is the ellipsis. 
+                                                        Old one was 'M'. 
+                                                        Let's try to simulate the 3-dots or just use text 'Medium'? 
+                                                        No, user asked for logos.
+                                                        Let's use a simple path for the 'M' or just generic 'FileText' if unsure?
+                                                        Better: standard Medium icon SVG path.
+                                                    */}
+                                                    <circle cx="5" cy="12" r="5" fill="currentColor" stroke="none" />
+                                                    <ellipse cx="14" cy="12" rx="3.5" ry="5" fill="currentColor" stroke="none" />
+                                                    <ellipse cx="21" cy="12" rx="1.5" ry="5" fill="currentColor" stroke="none" />
+                                                </svg>
+                                            ),
+                                            href: "https://medium.com/@thedigitaldose25"
+                                        },
                                     ].map(({ Icon, href }, index) => (
                                         <a
                                             key={index}
                                             href={href}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
                                             className="w-10 h-10 rounded-full flex items-center justify-center transition-all hover:scale-110 shadow-sm"
                                             style={{
-                                                backgroundColor: '#5FC883',
+                                                backgroundColor: '#5FC883', // Keep base green
                                                 color: '#000000'
                                             }}
+                                            onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#F7EA00'}
+                                            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#5FC883'}
                                         >
                                             <Icon size={18} />
                                         </a>
                                     ))}
-                                    <a
-                                        href="#"
-                                        className="w-10 h-10 rounded-full flex items-center justify-center transition-all hover:scale-110 shadow-sm font-bold"
-                                        style={{
-                                            backgroundColor: '#5FC883',
-                                            color: '#000000'
-                                        }}
-                                    >
-                                        V
-                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -132,7 +159,7 @@ export const Contact = () => {
                                     name="firstName"
                                     value={formData.firstName}
                                     onChange={handleChange}
-                                    className="w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#5FC883] transition-all bg-[#1F2937] border-transparent text-white placeholder-gray-500"
+                                    className="w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#F7EA00] transition-all bg-[#1F2937] border-transparent text-white placeholder-gray-500"
                                 />
                             </div>
                             <div>
@@ -143,14 +170,14 @@ export const Contact = () => {
                                     name="lastName"
                                     value={formData.lastName}
                                     onChange={handleChange}
-                                    className="w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#5FC883] transition-all bg-[#1F2937] border-transparent text-white placeholder-gray-500"
+                                    className="w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#F7EA00] transition-all bg-[#1F2937] border-transparent text-white placeholder-gray-500"
                                 />
                             </div>
                         </div>
 
                         <div>
                             <label htmlFor="email" className="block text-sm mb-2 text-gray-400">
-                                Email <span className="text-[#5FC883]">*</span>
+                                Email <span className="text-[#F7EA00]">*</span>
                             </label>
                             <input
                                 type="email"
@@ -171,16 +198,16 @@ export const Contact = () => {
                                 value={formData.message}
                                 onChange={handleChange}
                                 rows={5}
-                                className="w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#5FC883] transition-all bg-[#1F2937] border-transparent text-white placeholder-gray-500 resize-none"
+                                className="w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#F7EA00] transition-all bg-[#1F2937] border-transparent text-white placeholder-gray-500 resize-none"
                             />
                         </div>
 
                         <div className="flex justify-start">
                             <motion.button
                                 type="submit"
-                                whileHover={{ scale: 1.02, boxShadow: '0 0 30px -5px rgba(95, 200, 131, 0.5)' }}
+                                whileHover={{ scale: 1.02, boxShadow: '0 0 30px -5px rgba(247, 234, 0, 0.5)' }}
                                 whileTap={{ scale: 0.98 }}
-                                className="w-full px-8 py-4 font-bold rounded-lg transition-all bg-[#5FC883] text-black hover:bg-[#4CAF70] uppercase tracking-wide"
+                                className="w-full px-8 py-4 font-bold rounded-lg transition-all bg-[#F7EA00] text-black hover:bg-[#E5D900] uppercase tracking-wide"
                             >
                                 Send Message
                             </motion.button>

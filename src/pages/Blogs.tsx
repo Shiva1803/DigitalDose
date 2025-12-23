@@ -6,33 +6,37 @@ import { Search } from 'lucide-react';
 const blogs = [
     {
 
-        title: 'First Chat and Voice Interaction',
-        date: 'May 15, 2025',
-        level: 'Beginner',
+        title: 'Google Antigravity, Simplified',
+        date: 'Nov 27, 2025',
+        link: 'https://medium.com/@thedigitaldose25/google-antigravity-simplified-7ca18fc33dbb',
+        image: '/google-antigravity.png',
 
         delay: 0.1
     },
     {
 
-        title: 'Better Prompts Talk to AI More Effectively',
-        date: 'May 15, 2025',
-        level: 'Beginner',
+        title: 'WEB 3 - The Web doesn’t need a CEO.',
+        date: 'Nov 29, 2025',
+        link: 'https://medium.com/@thedigitaldose25/web-3-the-web-doesnt-need-a-ceo-7ed5d33eb519',
+        image: '/web3-bg.png',
 
         delay: 0.2
     },
     {
 
-        title: 'Spoken Commands to Smart Results',
-        date: 'May 15, 2025',
-        level: 'Intermediate',
+        title: 'Satsuma: Making Web3 Data Feel Like Web2',
+        date: 'Dec 10, 2025',
+        link: 'https://medium.com/@thedigitaldose25/satsuma-making-web3-data-feel-like-web2-a17515cc7c66',
+        image: '/satsuma-bg.png',
 
         delay: 0.3
     },
     {
 
-        title: 'Advanced Neural Network Architectures',
-        date: 'May 15, 2025',
-        level: 'Intermediate',
+        title: 'Scale AI-Human in the Loop',
+        date: 'Dec 12, 2025',
+        link: 'https://medium.com/@thedigitaldose25/scale-ai-human-in-the-loop-4061d2447d22',
+        image: '/scale-ai.png',
 
         delay: 0.1
     },
@@ -40,7 +44,6 @@ const blogs = [
 
         title: 'Optimizing Large Language Models',
         date: 'May 15, 2025',
-        level: 'Expert',
 
         delay: 0.2
     },
@@ -48,7 +51,6 @@ const blogs = [
 
         title: 'Future of Generative AI Systems',
         date: 'May 15, 2025',
-        level: 'Expert',
 
         delay: 0.3
     }

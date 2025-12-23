@@ -6,6 +6,7 @@ import { About } from './pages/About';
 import { ServicesPage } from './pages/ServicesPage';
 import { WorkPage } from './pages/WorkPage';
 import { Contact } from './pages/Contact';
+import { ServiceDetail } from './pages/ServiceDetail';
 import { Footer } from './components/Footer';
 import { useEffect } from 'react';
 import { ThemeProvider } from './context/ThemeContext';
@@ -33,6 +34,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/services" element={<ServicesPage />} />
+              <Route path="/services/:id" element={<ServiceDetail />} />
               <Route path="/work" element={<WorkPage />} />
               <Route path="/blogs" element={<Blogs />} />
               <Route path="/about" element={<About />} />

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Button } from './Button';
+import { Link } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
 
 export const PortfolioCTA = () => {
@@ -58,14 +58,14 @@ export const PortfolioCTA = () => {
                     viewport={{ once: true }}
                     transition={{ delay: 0.2 }}
                 >
-                    <Button
-                        size="lg"
-                        className="h-16 px-12 text-xl font-bold uppercase tracking-wider rounded-none skew-x-[-10deg] hover:skew-x-0 transition-transform duration-300 bg-[#5FC883] text-black"
+                    <Link
+                        to="/work"
+                        className="inline-flex items-center gap-2 h-16 px-12 text-xl font-bold uppercase tracking-wider bg-[#5FC883] text-black hover:bg-[#4CAF70] transition-colors duration-300 transform skew-x-[-10deg] hover:skew-x-0"
                     >
                         <span className="skew-x-[10deg] group-hover:skew-x-0 inline-flex items-center gap-2">
                             Our Work <ArrowUpRight className="w-6 h-6" />
                         </span>
-                    </Button>
+                    </Link>
                 </motion.div>
             </div>
         </section>

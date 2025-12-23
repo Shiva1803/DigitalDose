@@ -1,31 +1,6 @@
 import { motion } from 'framer-motion';
-
-const services = [
-    {
-        title: "Digital Strategy",
-        description: "We craft data-driven strategies that align with your business goals and drive measurable growth."
-    },
-    {
-        title: "Brand Identity",
-        description: "Creating memorable brand experiences through logo design, visual systems, and brand voice guidelines."
-    },
-    {
-        title: "Web Development",
-        description: "Building high-performance, scalable websites using modern technologies like React, Next.js, and Tailwind."
-    },
-    {
-        title: "SEO Optimization",
-        description: "Improving your search engine rankings to drive organic traffic and increase visibility."
-    },
-    {
-        title: "Social Media Marketing",
-        description: "Engaging your audience with compelling content and targeted campaigns across all social platforms."
-    },
-    {
-        title: "Content Creation",
-        description: "Producing high-quality visuals, copy, and multimedia assets to tell your brand story."
-    }
-];
+import { Link } from 'react-router-dom';
+import { services } from '../data/services';
 
 export const ServicesPage = () => {
 
@@ -82,17 +57,18 @@ export const ServicesPage = () => {
                         >
                             <div
                                 className="w-12 h-1 mb-8 group-hover:w-24 transition-all duration-300"
-                                style={{ backgroundColor: '#5FC883' }}
+                                style={{ backgroundColor: '#F7EA00' }}
                             ></div>
                             <h3 className="text-2xl font-bold mb-4" style={{ color: 'var(--text-primary)' }}>{service.title}</h3>
-                            <p className="mb-8 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>"{service.description}"</p>
+                            <p className="mb-8 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>"{service.shortDesc}"</p>
 
-                            <button
-                                className="px-6 py-2 rounded-full text-sm font-medium opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300"
-                                style={{ backgroundColor: '#5FC883', color: '#000000' }}
+                            <Link
+                                to={`/services/${service.id}`}
+                                className="inline-block px-6 py-2 rounded-full text-sm font-bold opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 hover:bg-[#E5D900]"
+                                style={{ backgroundColor: '#F7EA00', color: '#000000' }}
                             >
                                 Read More
-                            </button>
+                            </Link>
                         </motion.div>
                     ))}
                 </div>

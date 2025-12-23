@@ -1,4 +1,5 @@
-import { Facebook, Instagram, Linkedin, Twitter, ArrowUp } from 'lucide-react';
+import { Instagram, Linkedin, Twitter, ArrowUp } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export const Footer = () => {
 
@@ -32,12 +33,48 @@ export const Footer = () => {
                             We are a team of creative minds dedicated to prescribing the best digital solutions for your brand's growth.
                         </p>
                         <div className="flex gap-4">
-                            {[Facebook, Twitter, Instagram, Linkedin].map((Icon, i) => (
+                            {[
+                                { Icon: Instagram, href: "https://www.instagram.com/_thedigitaldose_/" },
+                                { Icon: Linkedin, href: "https://www.linkedin.com/company/109764857/" },
+                                { Icon: Twitter, href: "https://x.com/_thedigitaldose" },
+                                {
+                                    Icon: ({ size, ...props }: { size?: number | string } & React.SVGProps<SVGSVGElement>) => (
+                                        <svg
+                                            width={size}
+                                            height={size}
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            strokeWidth="2"
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            {...props}
+                                        >
+                                            <path d="M8 16a3 3 0 1 1-6 0v-1a10 10 0 1 0 10 10" />
+                                            <circle cx="12" cy="12" r="10" />
+                                            <circle cx="5" cy="12" r="5" fill="currentColor" stroke="none" />
+                                            <ellipse cx="14" cy="12" rx="3.5" ry="5" fill="currentColor" stroke="none" />
+                                            <ellipse cx="21" cy="12" rx="1.5" ry="5" fill="currentColor" stroke="none" />
+                                        </svg>
+                                    ),
+                                    href: "https://medium.com/@thedigitaldose25"
+                                },
+                            ].map(({ Icon, href }, i) => (
                                 <a
                                     key={i}
-                                    href="#"
-                                    className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300"
+                                    href={href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
                                     style={{ backgroundColor: 'rgba(255,255,255,0.06)', color: '#F9FAFB' }}
+                                    onMouseEnter={(e) => {
+                                        e.currentTarget.style.backgroundColor = '#5FC883';
+                                        e.currentTarget.style.color = '#000000';
+                                    }}
+                                    onMouseLeave={(e) => {
+                                        e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.06)';
+                                        e.currentTarget.style.color = '#F9FAFB';
+                                    }}
                                 >
                                     <Icon size={18} />
                                 </a>
@@ -48,10 +85,10 @@ export const Footer = () => {
                     <div>
                         <h4 className="font-bold text-lg mb-6" style={{ color: '#ffffff' }}>Company</h4>
                         <ul className="space-y-4 text-gray-400">
-                            <li><a href="#" className="hover:text-[#5FC883] transition-colors">About Us</a></li>
-                            <li><a href="#" className="hover:text-[#5FC883] transition-colors">Careers</a></li>
-                            <li><a href="#" className="hover:text-[#5FC883] transition-colors">Blog</a></li>
-                            <li><a href="#" className="hover:text-[#5FC883] transition-colors">Contact</a></li>
+                            <li><Link to="/about" className="hover:text-[#5FC883] transition-colors">About Us</Link></li>
+                            <li><Link to="/blogs" className="hover:text-[#5FC883] transition-colors">Blog</Link></li>
+                            <li><Link to="/contact" className="hover:text-[#5FC883] transition-colors">Contact</Link></li>
+                            <li><Link to="/work" className="hover:text-[#5FC883] transition-colors">Our Work</Link></li>
                         </ul>
                     </div>
 
