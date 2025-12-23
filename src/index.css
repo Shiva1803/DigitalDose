@@ -1,0 +1,156 @@
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+@layer base {
+
+  /* Light Green & Yellow Theme (WeBeeSocial-inspired) */
+  :root {
+    /* Backgrounds */
+    --bg-primary: #ffffff;
+    --bg-secondary: #F8FAFC;
+    --bg-tertiary: #F5F7FB;
+    --bg-card: #ffffff;
+
+    /* Text */
+    --text-primary: #000000;
+    --text-secondary: #4B5563;
+    --text-muted: #9CA3AF;
+
+    /* Accents */
+    --accent-primary: #5FC883;
+    /* green */
+    --accent-secondary: #F7EA00;
+    /* yellow */
+    --accent-cyan: #5FC883;
+    --accent-blue: #5FC883;
+
+    /* Borders / surfaces */
+    --border-color: rgba(15, 23, 42, 0.08);
+    --glass-bg: rgba(255, 255, 255, 0.9);
+    --card-hover: #EDF2FF;
+
+    /* Gradients (green → yellow) */
+    --gradient-start: #5FC883;
+    --gradient-end: #F7EA00;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+  }
+}
+
+@layer utilities {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .text-outline {
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+    color: transparent;
+  }
+
+  .text-outline-hover:hover {
+    -webkit-text-stroke: 0px;
+    color: #6D28D9;
+  }
+
+  @keyframes liquid-fill {
+    0% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .animate-text-glow {
+    background: linear-gradient(to right,
+        rgba(255, 255, 255, 0),
+        rgba(139, 92, 246, 0.5),
+        #22D3EE,
+        rgba(109, 40, 217, 0.5),
+        rgba(255, 255, 255, 0));
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-stroke: 1px transparent;
+    color: transparent;
+    animation: liquid-fill 3s linear infinite;
+  }
+
+  @keyframes blob {
+    0% {
+      transform: translate(0px, 0px) scale(1);
+    }
+
+    33% {
+      transform: translate(30px, -50px) scale(1.1);
+    }
+
+    66% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
+
+    100% {
+      transform: translate(0px, 0px) scale(1);
+    }
+  }
+
+  .animate-blob {
+    animation: blob 20s infinite;
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-marquee {
+    animation: marquee 20s linear infinite;
+  }
+
+  .hover-pause:hover {
+    animation-play-state: paused;
+  }
+}
+
+@layer base {
+
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  .lenis.lenis-scrolling iframe {
+    pointer-events: none;
+  }
+}
