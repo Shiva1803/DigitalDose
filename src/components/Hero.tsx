@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Play } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { Button } from './Button';
 
 export const Hero = () => {
@@ -26,7 +27,7 @@ export const Hero = () => {
                 className="absolute inset-0 bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_at_center,black_50%,transparent_100%)] pointer-events-none"
                 style={{
                     backgroundImage:
-                        'linear-gradient(rgba(148, 163, 184, 0.08) 1px,transparent 1px),linear-gradient(90deg,rgba(148, 163, 184, 0.08) 1px,transparent 1px)'
+                        'linear-gradient(rgba(95, 200, 131, 0.12) 1px,transparent 1px),linear-gradient(90deg,rgba(95, 200, 131, 0.12) 1px,transparent 1px)'
                 }}
             />
 
@@ -65,20 +66,22 @@ export const Hero = () => {
                     className="flex flex-wrap justify-center gap-6"
                 >
                     <Button size="lg" className="h-14 px-8 text-lg">
-                        Get Your Prescription <ArrowRight className="ml-2 w-5 h-5" />
+                        Know How <ArrowRight className="ml-2 w-5 h-5" />
                     </Button>
-                    <Button
-                        variant="outline"
-                        size="lg"
-                        className="h-14 px-8 text-lg"
-                        style={{
-                            borderColor: '#5FC883',
-                            color: '#111827',
-                            backgroundColor: '#ffffff'
-                        }}
-                    >
-                        <Play className="mr-2 w-5 h-5" fill="currentColor" />Watch Showreel
-                    </Button>
+                    <Link to="/work">
+                        <Button
+                            variant="outline"
+                            size="lg"
+                            className="h-14 px-8 text-lg"
+                            style={{
+                                borderColor: '#5FC883',
+                                color: '#111827',
+                                backgroundColor: '#ffffff'
+                            }}
+                        >
+                            <Play className="mr-2 w-5 h-5" fill="currentColor" />See our work
+                        </Button>
+                    </Link>
                 </motion.div>
 
 

@@ -12,7 +12,7 @@ const services = [
         icon: <Code className="w-8 h-8" />,
         title: "Web Development",
         description: "Blazing fast, award-winning websites built for the modern web. Next.js, React, & more.",
-        colSpan: "md:col-span-2",
+        colSpan: "md:col-span-1",
     },
     {
         icon: <Share2 className="w-8 h-8" />,
@@ -108,9 +108,9 @@ export const Services = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.1 }}
-                                className="group relative p-8 rounded-3xl transition-all duration-300 hover:bg-gray-50"
+                                className="group relative rounded-3xl transition-all duration-300 overflow-hidden p-8 hover:bg-gray-50"
                                 style={{
-                                    border: '1px solid transparent' // Clean look
+                                    border: '1px solid transparent'
                                 }}
                             >
                                 <div className="mb-6 flex items-start justify-between">
@@ -133,106 +133,7 @@ export const Services = () => {
                 </div>
             </div>
 
-            {/* Section 2: Integrated Digital Solutions */}
-            <div className="w-full mt-32">
-                <div className="flex flex-col lg:flex-row h-auto lg:min-h-[600px]">
-                    {/* Text Left */}
-                    <div className="lg:w-1/2 bg-white p-12 lg:p-24 flex flex-col justify-center">
-                        <motion.h2
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            className="text-5xl md:text-6xl font-bold mb-6 tracking-tighter text-black"
-                        >
-                            Integrated<br />
-                            Digital<br />
-                            Solutions
-                        </motion.h2>
 
-                        <motion.div
-                            initial={{ scaleX: 0 }}
-                            whileInView={{ scaleX: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: 0.2 }}
-                            className="w-24 h-1 mb-8 origin-left"
-                            style={{ backgroundColor: '#F7EA00' }}
-                        />
-
-                        <h3 className="text-2xl font-serif italic mb-6 text-gray-800">
-                            Insights, Metrics and Analytics - <br />
-                            Everything is connected!
-                        </h3>
-
-                        <p className="text-lg text-gray-600 leading-relaxed max-w-md">
-                            In a digital world where everything's connected, we believe that the approach to digital communications has to be joined-up too. Our approach combines creativity & technology and blends a diverse range of digital marketing disciplines.
-                        </p>
-                    </div>
-                    {/* Visual Right */}
-                    <div className="lg:w-1/2 bg-gray-100 min-h-[400px] lg:min-h-full relative overflow-hidden group">
-                        <img
-                            src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=2670"
-                            alt="Integrated Digital Solutions"
-                            className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                        />
-                        <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500" />
-                    </div>
-                </div>
-            </div>
-
-            {/* Section 3: Strategy, Creativity & Results */}
-            <div className="w-full">
-                <div className="flex flex-col-reverse lg:flex-row h-auto lg:min-h-[600px]">
-                    {/* Visual Left */}
-                    <div className="lg:w-1/2 bg-gray-100 min-h-[400px] lg:min-h-full relative overflow-hidden group">
-                        <img
-                            src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=2670"
-                            alt="Strategy Creativity Results"
-                            className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                        />
-                        <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500" />
-                    </div>
-
-                    {/* Text Right */}
-                    <div className="lg:w-1/2 bg-white p-12 lg:p-24 flex flex-col justify-center">
-                        <motion.h2
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            className="text-5xl md:text-6xl font-bold mb-6 tracking-tighter text-black"
-                        >
-                            Strategy,<br />
-                            Creativity &<br />
-                            Results!
-                        </motion.h2>
-
-                        <motion.div
-                            initial={{ scaleX: 0 }}
-                            whileInView={{ scaleX: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: 0.2 }}
-                            className="w-24 h-1 mb-8 origin-left"
-                            style={{ backgroundColor: '#5FC883' }}
-                        />
-
-                        <h3 className="text-2xl font-serif italic mb-6 text-gray-800">
-                            Our approach is backed by strategy, creativity and optimised for results.
-                        </h3>
-
-                        <p className="text-lg text-gray-600 leading-relaxed max-w-md">
-                            We understand that each client and each project we undertake is different and so we have developed a repeatable process that we know works. Our methodology puts the user at the heart of the experience from the start.
-                        </p>
-
-                        <div className="mt-8">
-                            <a
-                                href="/work"
-                                className="inline-flex items-center justify-center w-12 h-12 rounded-none bg-[#F7EA00] text-black hover:bg-black hover:text-[#F7EA00] transition-colors duration-300"
-                            >
-                                <ArrowUpRight className="w-6 h-6" />
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </section>
     );
 };

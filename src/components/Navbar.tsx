@@ -30,8 +30,8 @@ export const Navbar = () => {
             animate={{ y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className={`fixed w-full z-50 transition-all duration-300 ${isScrolled
-                ? 'py-4 backdrop-blur-md border-b'
-                : 'py-6'
+                ? 'py-2 backdrop-blur-md border-b'
+                : 'py-3'
                 }`}
             style={{
                 backgroundColor: isScrolled ? 'var(--glass-bg)' : 'var(--bg-primary)',
@@ -41,11 +41,11 @@ export const Navbar = () => {
         >
             <div className="container-custom flex items-center justify-between">
                 <Link to="/" className="flex items-center gap-2 group relative z-50">
-                    <div className="w-10 h-10 rounded-xl flex items-center justify-center text-black font-bold text-xl shadow-sm group-hover:shadow-md transition-all duration-200"
-                        style={{ backgroundColor: '#5FC883' }}
-                    >
-                        D
-                    </div>
+                    <img
+                        src="/logo.png"
+                        alt="The Digital Dose"
+                        className="w-14 h-14 object-contain group-hover:scale-105 transition-transform duration-200"
+                    />
                     <span className="font-bold text-xl tracking-tight" style={{ color: 'var(--text-primary)' }}>
                         The Digital Dose<span style={{ color: '#F7EA00' }}>.</span>
                     </span>

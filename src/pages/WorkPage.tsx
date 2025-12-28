@@ -24,18 +24,6 @@ const projects = [
         category: "Restaurant",
         image: "https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=2670&auto=format&fit=crop",
         link: "#"
-    },
-    {
-        title: "Watches",
-        category: "eCommerce",
-        image: "https://images.unsplash.com/photo-1523170335258-f5ed11844a49?q=80&w=2669&auto=format&fit=crop",
-        link: "#"
-    },
-    {
-        title: "Launchfolio",
-        category: "Creative",
-        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop",
-        link: "#"
     }
 ];
 
